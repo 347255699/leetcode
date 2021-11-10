@@ -5,10 +5,12 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
+ * 两数之和
  * @author menfre
  */
 public class TwoNumberSum {
     private int[] twoSum(int[] nums, int target) {
+        // 利用哈希表将查询效率控制在 n*log(n)
         Map<Integer, Integer> heap = new HashMap<>(nums.length);
         for (int i = 0; i < nums.length; i++) {
             heap.put(nums[i], i);

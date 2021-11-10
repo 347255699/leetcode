@@ -1,10 +1,12 @@
 package org.menfre;
 
 /**
+ * 搜索插入位置
  * @author menfre
  */
 public class SearchInsert {
     public int searchInsert(int[] nums, int target) {
+        // 利用二分法实现 O(logn) 查询效率
         return binarySearch(0, nums.length - 1, nums, target);
     }
 

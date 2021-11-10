@@ -1,10 +1,12 @@
 package org.menfre;
 
 /**
+ * 删除有序数组的重复项
  * @author menfre
  */
 public class RemoveDuplicates {
     public int removeDuplicates(int[] nums) {
+        // 采用双针法，将无效数据堆砌在数组末尾
         int p = 0;
         int q = 1;
         for(; p < nums.length; p++){

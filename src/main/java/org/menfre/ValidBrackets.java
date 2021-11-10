@@ -5,6 +5,7 @@ import java.util.Map;
 import java.util.Stack;
 
 /**
+ * 有效括号
  * @author menfre
  */
 public class ValidBrackets {
@@ -13,6 +14,7 @@ public class ValidBrackets {
         brackets.put('(', ')');
         brackets.put('{', '}');
         brackets.put('[', ']');
+        // 此法分析
         Stack<Character> stack = new Stack<>();
         for (int i = 0; i < s.length(); i++) {
             char c = s.charAt(i);

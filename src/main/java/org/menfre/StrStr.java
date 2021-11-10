@@ -1,6 +1,7 @@
 package org.menfre;
 
 /**
+ * 实现 strStr()
  * @author menfre
  */
 public class StrStr {
@@ -13,6 +14,7 @@ public class StrStr {
 
         for (int i = 0; i < haystack.length(); i++) {
             if(haystack.charAt(i) == needle.charAt(0)){
+                // 逐个字符匹配
                 if((haystack.length() - i) < needle.length()){
                     return -1;
                 }

@@ -1,6 +1,7 @@
 package org.menfre;
 
 /**
+ * 最大子序和
  * @author menfre
  */
 public class SubArray {
@@ -8,6 +9,7 @@ public class SubArray {
         int sum = 0;
         int result = nums[0];
         for (int num : nums) {
+            // sum 是否为正数，若不是则抛弃原来的值
             if(sum > 0){
                 sum += num;
             }else{

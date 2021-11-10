@@ -4,6 +4,7 @@ package org.menfre;
 import java.util.*;
 
 /**
+ * 罗马数字转整数
  * @author menfre
  */
 public class RomanToInt {

@@ -1,6 +1,7 @@
 package org.menfre;
 
 /**
+ * 加一
  * @author menfre
  */
 public class PlusOne {

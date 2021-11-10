@@ -2,10 +2,12 @@ package org.menfre;
 
 
 /**
+ * 移除元素
  * @author menfre
  */
 public class RemoveElement {
     public int removeElement(int[] nums, int val) {
+        // 采用双针法，将无效数据堆砌在数组末尾
         int p = 0, q = 0;
         for (; p < nums.length; p++) {
             if (nums[p] == val) {

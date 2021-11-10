@@ -1,9 +1,10 @@
 package org.menfre;
 
 /**
+ * 合并两个有序链表
  * @author menfre
  */
-public class TwoAscChain {
+public class MergeTwoAscChain {
     public static class ListNode {
         public final int val;
         public ListNode next;
@@ -53,7 +54,7 @@ public class TwoAscChain {
     public static void main(String[] args) {
         ListNode n1 = new ListNode(1, new ListNode(2, new ListNode(4, null)));
         ListNode n2 = new ListNode(1, new ListNode(3, new ListNode(4, null)));
-        ListNode next = new TwoAscChain().mergeTwoLists(n1, n2);
+        ListNode next = new MergeTwoAscChain().mergeTwoLists(n1, n2);
         while (next != null) {
             System.out.print(next.val + ",");
             next = next.next;

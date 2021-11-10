@@ -1,6 +1,7 @@
 package org.menfre;
 
 /**
+ * 最长公共前缀
  * @author menfre
  */
 public class LongestCommonPrefix {
