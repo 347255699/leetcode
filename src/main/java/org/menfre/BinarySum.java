@@ -8,7 +8,18 @@ package org.menfre;
 public class BinarySum {
 
     public String addBinary(String a, String b) {
-        int len = Math.max(a.length(), b.length());
+        if (a.length() < b.length()) {
+            String temp = b;
+            b = a;
+            a = temp;
+        }
+
+        int c = a.length() - b.length();
+        // 进位
+        int d = 0;
+        for (int i = 0; i < a.length(); i++) {
+
+        }
 //        b.length() - a.length()
 //        char[] sum = new char[len];
 //        // 进位
