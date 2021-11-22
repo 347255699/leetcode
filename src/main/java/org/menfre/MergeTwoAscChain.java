@@ -1,19 +1,12 @@
 package org.menfre;
 
+import org.menfre.type.ListNode;
+
 /**
  * 合并两个有序链表
  * @author menfre
  */
 public class MergeTwoAscChain {
-    public static class ListNode {
-        public final int val;
-        public ListNode next;
-
-        ListNode(int val, ListNode next) {
-            this.val = val;
-            this.next = next;
-        }
-    }
 
     public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
         ListNode header;

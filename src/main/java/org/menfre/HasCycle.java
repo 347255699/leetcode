@@ -1,6 +1,6 @@
 package org.menfre;
 
-import javax.lang.model.element.VariableElement;
+import org.menfre.type.ListNode;
 
 /**
  * 环形链表
@@ -8,26 +8,6 @@ import javax.lang.model.element.VariableElement;
  * @author menfre
  */
 public class HasCycle {
-
-    public static class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode(int val) {
-            this.val = val;
-            this.next = null;
-        }
-
-        ListNode(int val, ListNode next) {
-            this.val = val;
-            this.next = next;
-        }
-
-        public void setNext(ListNode next){
-            this.next = next;
-        }
-    }
-
 
     public boolean hasCycle(ListNode head) {
         if(head == null || head.next == null){

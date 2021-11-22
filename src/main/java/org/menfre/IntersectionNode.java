@@ -1,21 +1,13 @@
 package org.menfre;
 
+import org.menfre.type.ListNode;
+
 /**
  * 相交链表
  *
  * @author menfre
  */
 public class IntersectionNode {
-
-    public static class ListNode {
-        int val;
-        ListNode next;
-
-        ListNode(int x) {
-            val = x;
-            next = null;
-        }
-    }
 
     public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
         ListNode p = headA;
