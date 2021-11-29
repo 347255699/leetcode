@@ -36,19 +36,8 @@ public class RomanToInt {
         int result = 0;
         for (int i = 0; i < s.length(); i++) {
             char c = s.charAt(i);
-            if (i != s.length() - 1) {
-                char c2 = s.charAt(i + 1);
-                i++;
-                if (c == 'I' && (c2 == 'V' || c2 == 'X')) {
-                    result += relations.get(c2) - relations.get(c);
-                } else if (c == 'X' && (c2 == 'L' || c2 == 'C')) {
-                    result += relations.get(c2) - relations.get(c);
-                } else if (c == 'C' && (c2 == 'D' || c2 == 'M')) {
-                    result += relations.get(c2) - relations.get(c);
-                } else {
-                    result += relations.get(c);
-                    i--;
-                }
+            if (i != s.length() - 1 && relations.get(c) < relations.get(s.charAt(i + 1))) {
+                result -= relations.get(c);
             } else {
                 result += relations.get(c);
             }
