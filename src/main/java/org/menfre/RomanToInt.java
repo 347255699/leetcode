@@ -1,28 +1,23 @@
 package org.menfre;
 
-
-import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * 罗马数字转整数
+ *
  * @author menfre
  */
 public class RomanToInt {
     public int romanToInt(String s) {
-        String[] romans = {
-                "I",
-                "V",
-                "X",
-                "L",
-                "C",
-                "D",
-                "M",
-                "IV",
-                "IX",
-                "XL",
-                "XC",
-                "CD",
-                "CM"
+        char[] romans = {
+                'I',
+                'V',
+                'X',
+                'L',
+                'C',
+                'D',
+                'M',
         };
         int[] numbers = {
                 1,
@@ -31,43 +26,38 @@ public class RomanToInt {
                 50,
                 100,
                 500,
-                1000,
-                4,
-                9,
-                40,
-                90,
-                400,
-                900
+                1000
         };
-        Map<String, Integer> relations = new HashMap<>(romans.length);
+        Map<Character, Integer> relations = new HashMap<>(romans.length);
         for (int i = 0; i < romans.length; i++) {
             relations.put(romans[i], numbers[i]);
         }
+
         int result = 0;
-        // 词法分析
-        Stack<String> stack = new Stack<>();
-        for (char c : s.toCharArray()) {
-            String romanWord = String.valueOf(c);
-            if(stack.isEmpty()){
-                stack.push(romanWord);
-            }else{
-                String doubleRomanWord = stack.peek() + romanWord;
-                if (relations.containsKey(doubleRomanWord)) {
-                    stack.pop();
-                    stack.push(doubleRomanWord);
-                }else{
-                    stack.push(romanWord);
+        for (int i = 0; i < s.length(); i++) {
+            char c = s.charAt(i);
+            if (i != s.length() - 1) {
+                char c2 = s.charAt(i + 1);
+                i++;
+                if (c == 'I' && (c2 == 'V' || c2 == 'X')) {
+                    result += relations.get(c2) - relations.get(c);
+                } else if (c == 'X' && (c2 == 'L' || c2 == 'C')) {
+                    result += relations.get(c2) - relations.get(c);
+                } else if (c == 'C' && (c2 == 'D' || c2 == 'M')) {
+                    result += relations.get(c2) - relations.get(c);
+                } else {
+                    result += relations.get(c);
+                    i--;
                 }
+            } else {
+                result += relations.get(c);
             }
         }
 
-        for (String romanWord : stack) {
-            result += relations.get(romanWord);
-        }
         return result;
     }
 
     public static void main(String[] args) {
-        System.out.println(new RomanToInt().romanToInt("III"));
+        System.out.println(new RomanToInt().romanToInt("IV"));
     }
 }

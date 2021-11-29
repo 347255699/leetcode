@@ -2,9 +2,10 @@ package org.menfre;
 
 /**
  * 整数反转
+ *
  * @author menfre
  */
-public class IntegerReverse {
+public class Reverse {
     public int reverse(int x) {
         int reverse = 0;
         // Integer 最大和最小值除个位数外的前 n - 1 位值
@@ -33,6 +34,6 @@ public class IntegerReverse {
     }
 
     public static void main(String[] args) {
-        System.out.println(new IntegerReverse().reverse(12345));
+        System.out.println(new Reverse().reverse(12345));
     }
 }

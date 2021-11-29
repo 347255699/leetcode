@@ -10,7 +10,6 @@ import java.util.Map;
  */
 public class TwoNumberSum {
     private int[] twoSum(int[] nums, int target) {
-        // 利用哈希表将查询效率控制在 n*log(n)
         Map<Integer, Integer> heap = new HashMap<>(nums.length);
         for (int i = 0; i < nums.length; i++) {
             heap.put(nums[i], i);
