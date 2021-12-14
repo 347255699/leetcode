@@ -11,7 +11,14 @@ import java.util.Map;
 public class LongestWord {
 
     public String longestWord(String[] words) {
-        return null;
+        Trie trie = new Trie();
+        int index = 0;
+        for (String word : words) {
+            trie.insert(word, ++index);
+        }
+        trie.words = words;
+        trie.dfs(trie.root);
+        return trie.ans;
     }
 
     public static class Node {
@@ -25,8 +32,9 @@ public class LongestWord {
     }
 
     public static class Trie {
-        Node root;
-        String[] words;
+        private final Node root;
+        public String[] words;
+        public String ans = "";
 
         public Trie() {
             root = new Node('0');
@@ -39,6 +47,23 @@ public class LongestWord {
                 cur = cur.children.get(c);
             }
             cur.end = index;
+        }
+
+        public void dfs(Node root) {
+            if (root.children.isEmpty()) {
+                return;
+            }
+            if (root.end > 0 || this.root == root) {
+                if (this.root != root) {
+                    String word = words[root.end - 1];
+                    if (word.length() > ans.length() || (word.length() == ans.length() && word.compareTo(ans) < 0)) {
+                        ans = word;
+                    }
+                }
+                for (Node node : root.children.values()) {
+                    dfs(node);
+                }
+            }
         }
     }
 
