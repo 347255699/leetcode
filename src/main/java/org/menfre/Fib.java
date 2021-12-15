@@ -8,18 +8,16 @@ package org.menfre;
 public class Fib {
 
     public int fib(int n) {
-        int[] fibs = new int[n + 1];
-        if(n > 1) {
-            fibs[0] = 0;
-            fibs[1] = 1;
-
-            for (int i = 2; i <= n; i++) {
-                fibs[i] = fibs[i - 1] + fibs[i - 2];
-            }
-            return fibs[n - 1] + fibs[n - 2];
-        }else{
+        if (n < 2) {
             return n;
         }
+        int a, b = 1, r = 1;
+        for (int i = 2; i <= n; i++) {
+            a = b;
+            b = r;
+            r = a + b;
+        }
+        return r;
     }
 
     public static void main(String[] args) {
